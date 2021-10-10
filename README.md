@@ -43,9 +43,11 @@ Getting Started
 ```json
 ex.
   {
-    versionKey: false, // auto _v
-    timestamps: true, // auto createdAt and updatedAt
+    versionKey: false,
+    timestamps: true,
   }
+  versionKey: auto _v
+  timestamps: auto createdAt and updatedAt
   
 ex2.
   .set //เป็นการ set option เพิ่มใน schema เขียนด้านล่างตัว Schema ที่ export
