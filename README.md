@@ -22,5 +22,5 @@ Getting Started
 
 - สร้าง Model
 ```json
-  const Modelname = mongoose.model('model-name', kittySchema);
+  const Modelname = mongoose.model('model-name', nameSchema);
 ```
