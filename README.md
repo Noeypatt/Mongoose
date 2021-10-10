@@ -43,7 +43,7 @@ Getting Started
 ```json
 ex.
   {
-    versionKey: false // auto _v
+    versionKey: false, // auto _v
     timestamps: true, // auto createdAt and updatedAt
   }
   
