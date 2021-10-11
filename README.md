@@ -74,3 +74,12 @@ ex2.
   }
   
 ```
+
+2. save()
+
+```json
+
+  const newModel = ModuleName.create(data)
+  newModel.save()
+  
+```
