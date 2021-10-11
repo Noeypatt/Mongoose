@@ -55,7 +55,7 @@ ex2.
   NameSchema.set('toObject', { getters: true }); // แปลงข้อมูลที่ได้ให้อยู่ในรูป JavaScript Object
 ```
 
-##Document
+## Document
 1. populate(path,[model],[match],[select],[options],[callback]) 
   - path: ชื่อ fieldObject ที่ต้องการ
   - model: ชื่อ Model ที่จะไปเอาค่า fieldObject มา (import และประกาศใช้ Model ด้วย)  และไม่จำเป็นต้องใส่ค่านี้นี้ ถ้า fieldObject ไม่ได้ต้อง import มาจาก Model อื่น
@@ -78,8 +78,7 @@ ex2.
 2. save()
 
 ```json
-
   const newModel = ModuleName.create(data)
-  newModel.save()
   
+  newModel.save()
 ```
