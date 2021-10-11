@@ -54,3 +54,20 @@ ex2.
   NameSchema.set('toJSON', { getters: true }); // การทำงานเหมือน toObject แต่ใช้ได้เฉพาะ เมื่อ Document นั้นมีการใช้ toJSON ภายใน
   NameSchema.set('toObject', { getters: true }); // แปลงข้อมูลที่ได้ให้อยู่ในรูป JavaScript Object
 ```
+
+##Document
+1. populate(path,[model],[match],[select],[options],[callback]) 
+
+```json
+
+  Modelname.
+  find().
+  populate({
+    path: 'ชื่อ fieldObject ที่ต้องการ',
+    model: ชื่อ Model ที่จะไปเอาค่า fieldObject มา // import และประกาศใช้ Model ด้วย, ไม่ต้องใส่บรรทัดนี้ ถ้า fieldObject ไม่ได้มาจากที่อื่น
+    match: { เงื่อนไขตัวดำเนินการเปรียบเทียบ }, // เหมือน $match
+    select: 'keyที่ต้องการให้แสดง, -keyที่ไม่ต้องการให้แสดง'
+    options: { limit: 2 }
+  })
+  
+```
