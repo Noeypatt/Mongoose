@@ -57,17 +57,20 @@ ex2.
 
 ##Document
 1. populate(path,[model],[match],[select],[options],[callback]) 
+  - path: ชื่อ fieldObject ที่ต้องการ
+  - model: ชื่อ Model ที่จะไปเอาค่า fieldObject มา (import และประกาศใช้ Model ด้วย)  และไม่จำเป็นต้องใส่ค่านี้นี้ ถ้า fieldObject ไม่ได้ต้อง import มาจาก Model อื่น
+  - match: { เงื่อนไขตัวดำเนินการเปรียบเทียบ } => เหมือน $match
+  - select: 'keyที่ต้องการให้แสดง, -keyที่ไม่ต้องการให้แสดง'
+  - options: { limit: 2 }
 
 ```json
 
-  Modelname.
-  find().
-  populate({
-    path: 'ชื่อ fieldObject ที่ต้องการ',
-    model: ชื่อ Model ที่จะไปเอาค่า fieldObject มา // import และประกาศใช้ Model ด้วย, ไม่ต้องใส่บรรทัดนี้ ถ้า fieldObject ไม่ได้มาจากที่อื่น
-    match: { เงื่อนไขตัวดำเนินการเปรียบเทียบ }, // เหมือน $match
-    select: 'keyที่ต้องการให้แสดง, -keyที่ไม่ต้องการให้แสดง'
-    options: { limit: 2 }
-  })
+  Modelname.find().populate({
+    path: '',
+    model: nameOtherModel
+    match: {}, 
+    select: ''
+    options: {}
+  }
   
 ```
