@@ -25,6 +25,8 @@ Getting Started
   const Modelname = mongoose.model('model-name', nameSchema);
 ```
 
+---
+
 ##Schema
 ```json
   import mongoose
@@ -55,6 +57,8 @@ ex2.
   NameSchema.set('toObject', { getters: true }); // แปลงข้อมูลที่ได้ให้อยู่ในรูป JavaScript Object
 ```
 
+---
+
 ## Document
 1. populate(path,[model],[match],[select],[options],[callback]) 
   - path: ชื่อ fieldObject ที่ต้องการ
@@ -82,3 +86,37 @@ ex2.
   
   newModel.save()
 ```
+
+---
+
+## Model
+- การใช้งาน `Model.__`
+
+1. aggregate(): ใช้เหมือน .aggregate([stage]) ของ mongo
+2. count(): ใช้นับจำนวน โดยสามารถใส่ filter ได้ `Model.count({type:"A"})` => จำนวนข้อมูลทั้งหมดที่มี type = A
+**create**
+3. create(): สร้าง docs ต้อง save() ด้วย
+**delete**
+4. deleteMany({เงื่อนไข}): ลบมากกว่า 1 docs (Hard Delete) 
+5. deleteOne({เงื่อนไข}):  ลบ 1 doc (Hard Delete) 
+6. findByIdAndDelete(`{_id:id},{เงื่อนไข}`): ค้นหา id ที่ตรงกัน และทำการลบ (Soft Delete) 
+7. findByIdAndRemove(`{_id:id},{เงื่อนไข}`): ค้นหา id ที่ตรงกัน และทำการลบ (Hard Delete) 
+8. findOneAndDelete({เงื่อนไข}): deleteOne()
+9. findOneAndRemove({เงื่อนไข}): deleteOne()
+10. remove({เงื่อนไข}): ลบ docs ทั้งหมดที่ตรงเงื่อนไข ถ้าจะให้ลบแค่อันแรกที่เจออันเดียวให้เซ็ท `single:true`(Hard Delete)
+**find**
+11. find(): ค้นหา และคืนค่าเป็นข้อมูลทั้งหมดที่หาเจอ, สามารถใส่ {เงื่อนไข} ได้
+12. findById(): ค้นหาด้วย id และคืนค่าเป็นข้อมูลตัวแรกที่หาเจอ, สามารถใส่ {เงื่อนไข} ได้
+13. findOne(): ค้นหา และคืนค่าเป็นข้อมูลตัวแรกที่หาเจอ
+**update**
+14. update()
+15. updateMany()
+16. findByIdAndUpdate(`{_id:id},newData,{new:true}`): ค้นหา id ที่ตรงกัน และทำการอัปเดตค่า
+17. findOneAndUpdate(`{เงื่อนไข},newData,{new:true}`): อัปเดตค่าที่ตรงเงื่อนไขค่าแรกที่เจอ
+18. findOneAndReplace(): 
+19. replaceOne(): 
+**other**
+21. validate({ [field]: null }, ['field']): ตรวจสอบข้อมูล //field นี้ ห้ามเป็น null
+22. where(): ใช้ find() แทนได้เหมือนกัน
+23. populate(): ใช้เมื่อต้องการ pop ค่าออกมา
+
