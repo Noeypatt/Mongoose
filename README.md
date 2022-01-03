@@ -8,27 +8,27 @@ Getting Started
 ```
 
 - เชื่อมต่อ database (mongoDB)
-```json
+```mongoose
   import mongoose
   mongoose.connect('mongodb://localhost:27017/database-name');
 ```
 
 - สร้าง Schema
-```json
+```mongoose
   const nameSchema = new mongoose.Schema({
     [key]: [Type]
   });
 ```
 
 - สร้าง Model
-```json
+```mongoose
   const Modelname = mongoose.model('model-name', nameSchema);
 ```
 
 ---
 
 ##Schema
-```json
+```mongoose
   import mongoose
   const Schema = mongoose.Schema;
   
@@ -42,7 +42,7 @@ Getting Started
 **Types:** String, Number, Boolean | Bool, Array, Buffer, Date, ObjectId | Oid, Mixed
 
 **Option:**
-```json
+```mongoose
 ex.
   {
     versionKey: false,
@@ -67,7 +67,7 @@ ex2.
   - select: 'keyที่ต้องการให้แสดง, -keyที่ไม่ต้องการให้แสดง'
   - options: { limit: 2 }
 
-```json
+```mongoose
 
   Modelname.find().populate({
     path: '',
@@ -81,7 +81,7 @@ ex2.
 
 2. save()
 
-```json
+```mongoose
   const newModel = ModuleName.create(data)
   
   newModel.save()
